@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<button (click)="onClickMe()">Click me!</button>
+{{clickMessage}}
+<h1>{{name}}</h1>
+<input type="text"
+       class="form-control"
+       id="exampleInputPassword2"
+       placeholder="Password confirmation"
+       [(ngModel)]="passwordConfirmation"
+       name="passwordConfirmation"
+       required
+       minlength="6"
+       #passwordConfirmationCampo="ngModel"
+>
+<input #newHero
+       (keyup.enter)="addHero(newHero.value)"
+       (blur)="addHero(newHero.value); newHero.value='' ">
+
+<button (click)="addHero(newHero.value)">Add</button>
+
+<ul><li *ngFor="let hero of heroes">{{hero}}</li></ul>
+<h1>{{passwordConfirmation}}</h1>
+<h1>sada</h1>
+</body>
+</html>
